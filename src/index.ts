@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 const app = express();
 
 const allowedOrigins = [
-    'https://real-time-shared-grid.onrender.com/'
+    'https://real-time-shared-grid.onrender.com'
 ]
 
 app.use(cors({
