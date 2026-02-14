@@ -7,8 +7,13 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 const app = express();
 
+const allowedOrigins = [
+    'http://localhost:3000',
+]
+
 app.use(cors({
-    origin: '*',
+    origin: allowedOrigins,
+    credentials: true,
 }));
 
 const PORT = process.env.PORT ? Number(process.env.PORT) || 4001 : 4001;
@@ -19,7 +24,7 @@ app.get("/health", (_req, res) => {
 
 const server = http.createServer(app);
 const io = new SocketIOServer(server, {
-    cors: { origin: "*" }
+    cors: { origin: allowedOrigins, credentials: true },
 });
 
 io.on("connection", (socket) => {
