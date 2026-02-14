@@ -1,0 +1,37 @@
+{
+  "name": "realtime_grid_websocket_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RSWDevian/realtime_grid_websocket_server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RSWDevian/realtime_grid_websocket_server/issues"
+  },
+  "homepage": "https://github.com/RSWDevian/realtime_grid_websocket_server#readme",
+  "dependencies": {
+    "@prisma/client": "^6.19.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "prisma": "^6.19.2",
+    "socket.io": "^4.8.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.3",
+    "dotenv": "^17.3.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+}
