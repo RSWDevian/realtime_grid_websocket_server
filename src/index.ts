@@ -9,6 +9,7 @@ const app = express();
 
 const allowedOrigins = [
     'http://localhost:3000',
+    'https://real-time-shared-grid.onrender.com/'
 ]
 
 app.use(cors({
