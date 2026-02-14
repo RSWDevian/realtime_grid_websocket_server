@@ -11,6 +11,8 @@ app.use(cors({
     origin: '*',
 }));
 
+const PORT = process.env.PORT ? Number(process.env.PORT) || 4001 : 4001;
+
 app.get("/health", (_req, res) => {
     res.status(200).json({ status: "ok" });
 })
@@ -82,6 +84,6 @@ io.on("connection", (socket) => {
     });
 })
 
-server.listen(4001, () => {
-    console.log("Server is running on port 4001");
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 })
