@@ -43,6 +43,14 @@ io.on("connection", (socket) => {
         });
 
         io.emit("block-updated", updated);
+
+        io.emit("activity", {
+            id: Date.now().toString(),
+            action: "booked",
+            userEmail,
+            blockId,
+            timestamp: Date.now(),
+        });
     });
 
     socket.on("sell-block", async ({ blockId, userEmail }) => {
@@ -63,6 +71,14 @@ io.on("connection", (socket) => {
         });
 
         io.emit("block-updated", updated);
+
+        io.emit("activity", {
+            id: Date.now().toString(),
+            action: "sold",
+            userEmail,
+            blockId,
+            timestamp: Date.now(),
+        });
     });
 })
 
